@@ -1,0 +1,5 @@
+# use Quad9 as the system (resolv) resolver?
+ubuntu_dns_quad9: false
+
+# Ubuntu timezone
+ubuntu_timezone: America/Los_Angeles

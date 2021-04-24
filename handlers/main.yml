@@ -1,0 +1,5 @@
+---
+- name: reboot
+  reboot:
+    msg: "Ansible reboot"
+  become: true

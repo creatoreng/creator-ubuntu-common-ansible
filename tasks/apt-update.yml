@@ -1,0 +1,26 @@
+---
+- name: apt install prerequisites
+  apt:
+    pkg:
+     - apt-transport-https
+     - ca-certificates
+     - software-properties-common
+    state: latest
+  become: true
+
+- name: apt update cache
+  apt:
+    update_cache: true
+  become: true
+  changed_when: false # not an interesting change
+
+- name: apt upgrade packages
+  apt:
+    upgrade: safe
+  become: true
+
+- name: apt autoclean
+  apt:
+    autoremove: true
+    purge: true
+  become: true

@@ -1,0 +1,26 @@
+---
+- name: Configure DNS resolution
+  include_tasks: dns-quad9.yml
+  when: ubuntu_dns_quad9 | default(false) | bool
+
+- name: apt update
+  include_tasks: apt-update.yml
+
+- name: pip update
+  include_tasks: pip-update.yml
+
+- name: install Ansible prerequisites
+  include_tasks: ansible.yml
+
+- name: Configure login
+  include_tasks: login.yml
+
+- name: Configure timezone and ntp
+  include_tasks: time.yml
+
+- name: Query restart required
+  stat:
+    path: /var/run/reboot-required
+  register: stat_result
+  changed_when: stat_result.stat.exists
+  notify: reboot

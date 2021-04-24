@@ -1,0 +1,18 @@
+---
+- name: Set timezone
+  timezone:
+    name: "{{ ubuntu_timezone }}"
+  become: true
+
+- name: Install ntp
+  apt:
+    pkg:   ntp
+    state: latest
+  become: true
+
+- name: Enable ntp
+  service:
+    name: ntp
+    state: started
+    enabled: true
+  become: true

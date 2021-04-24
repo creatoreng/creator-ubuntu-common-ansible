@@ -1,0 +1,24 @@
+---
+- name: Remove help message of the day
+  file:
+    path:  /etc/update-motd.d/10-help-text
+    state: absent
+  become: true
+
+- name: Remove news message of the day
+  file:
+    path:  /etc/update-motd.d/50-motd-news
+    state: absent
+  become: true
+
+- name: Remove livepatch message of the day
+  file:
+    path:  /etc/update-motd.d/80-livepatch
+    state: absent
+  become: true
+
+- name: Remove unattended upgrades message of the day
+  file:
+    path:  /etc/92-unattended-upgrades
+    state: absent
+  become: true
