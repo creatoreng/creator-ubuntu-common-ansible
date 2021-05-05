@@ -9,10 +9,3 @@
     pkg:   ntp
     state: latest
   become: true
-
-- name: Enable ntp
-  service:
-    name: ntp
-    state: started
-    enabled: true
-  become: true
