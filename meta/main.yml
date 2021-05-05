@@ -1,0 +1,8 @@
+galaxy_info:
+  role_name: creator-ubuntu-common-ansible
+  company: Creator, Inc.
+  description: "Common package management and configuration for Ubuntu servers."
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
