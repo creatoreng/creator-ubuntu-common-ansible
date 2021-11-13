@@ -1,7 +1,7 @@
 ---
 # boto3 is used by some Ansible AWS tasks (when run on the host)
 - name: Install boto3
-  pip:
+  ansible.builtin.pip:
     name:
       - boto3
       - botocore
@@ -10,7 +10,7 @@
 
 # enable Ansible to sudo as unprivileged user
 - name: Install sudo & acl
-  apt:
+  ansible.builtin.apt:
     pkg:
       - sudo
       - acl
@@ -20,7 +20,7 @@
 # enable ansible unzip module, as well as embedded unzip
 # such as get_url
 - name: Instal unzip
-  apt:
+  ansible.builtin.apt:
     pkg:
       - unzip
       - gzip

@@ -1,9 +1,12 @@
 ---
 - name: Deploy system resolv.conf
-  copy:
+  ansible.builtin.copy:
     src:  dns-quad9-resolv.conf
     dest: /etc/resolv.conf
   become: true
 
 - name: Check internet connectivity
-  wait_for: host=google.com port=80 timeout=10
+  ansible.builtin.wait_for:
+    host: google.com
+    port: 80
+    timeout: 10

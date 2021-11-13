@@ -1,5 +1,5 @@
 ---
 - name: reboot
-  reboot:
+  ansible.builtin.reboot:
     msg: "Ansible reboot"
   become: true

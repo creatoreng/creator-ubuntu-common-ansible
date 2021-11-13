@@ -1,17 +1,17 @@
 ---
 - name: Authorize user {{ ansible_user }} SSH key
-  authorized_key:
+  ansible.posix.authorized_key:
     user: "{{ ansible_user }}"
     key: "{{ lookup('file', ansible_ssh_public_key_file ) }}"
   become: true
   when: ansible_ssh_public_key_file is defined
 
 - name: Add user {{ ansible_user }} to password-less sudousers
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/sudoers
     state: present
     line: "{{ ansible_user }} ALL=(ALL) NOPASSWD: ALL"
   become: true
 
 - name: Configure message of the day (motd)
-  include_tasks: login-motd.yml
+  ansible.builtin.import_tasks: login-motd.yml

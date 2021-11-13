@@ -1,11 +1,11 @@
 ---
 - name: Set timezone
-  timezone:
+  community.general.timezone:
     name: "{{ ubuntu_timezone }}"
   become: true
 
 - name: Install ntp
-  apt:
+  ansible.builtin.apt:
     pkg:   ntp
     state: latest
   become: true
