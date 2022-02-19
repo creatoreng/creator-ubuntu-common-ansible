@@ -19,7 +19,7 @@
 
 # enable ansible unzip module, as well as embedded unzip
 # such as get_url
-- name: Instal unzip
+- name: Install unzip
   ansible.builtin.apt:
     pkg:
       - unzip
