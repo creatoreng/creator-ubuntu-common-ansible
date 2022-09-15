@@ -26,3 +26,17 @@
       - gzip
     state: latest
   become: true
+
+- name: Install cron for daily jobs
+  ansible.builtin.apt:
+    pkg:   cron
+    state: latest
+  become: true
+
+- name: Install terminal editors
+  ansible.builtin.apt:
+    pkg:
+      - vi
+      - nano
+    state: latest
+  become: true
