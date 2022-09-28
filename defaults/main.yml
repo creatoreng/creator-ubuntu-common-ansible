@@ -2,4 +2,4 @@
 ubuntu_dns_quad9: false
 
 # Ubuntu timezone
-ubuntu_timezone: {{ site_timezone }}
+ubuntu_timezone: "{{ site_timezone }}"
