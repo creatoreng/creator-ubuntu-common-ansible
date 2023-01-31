@@ -38,3 +38,10 @@
     pkg: nano
     state: latest
   become: true
+
+# enable server to be used as relay point for other IPs
+- name: Install sshpass
+  ansible.builtin.apt:
+    pkg: sshpass
+    state: latest
+  become: true
